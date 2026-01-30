@@ -5,9 +5,9 @@
 #define I2S I2S_NUM_0
 #define SAMPLERATE 24000
 
-#define WS 25
-#define SD 33
-#define SCK 32
+#define WS 0
+#define SD 2
+#define SCK 1
 
 void setup() {
   Serial.begin(1000000);

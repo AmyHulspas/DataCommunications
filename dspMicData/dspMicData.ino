@@ -111,7 +111,7 @@ void loop() {
     int32_t samples[BLOCK_SIZE];
     size_t bytesRead = 0;
 
-    i2s_read(I2S_PORT, samples, sizeof(samples), &bytesRead, portMAX_DELAY);
+    i2s_read(I2S_PORT, samples, sizeof(samples), &bytesRead, portMAX_DELAY);a
 
     int count = bytesRead / sizeof(int32_t);
 

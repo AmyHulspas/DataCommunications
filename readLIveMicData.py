@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #Config
-serialPortName = 'COM10'
+serialPortName = 'COM4'
 baudRate = 1000000
 samplingRate = 24000
 bytesPerSample = 4
@@ -17,7 +17,7 @@ plotLength = 2048
 audioBuffer = np.zeros(plotLength, dtype=np.float32)
 
 waveformLine, = axis.plot(audioBuffer)
-axis.set_ylim(-1.0, 1.0)
+axis.set_ylim(-0.025, 0.025)
 axis.set_xlim(0, plotLength)
 axis.set_title("Live Waveform")
 axis.set_xlabel("Sample")

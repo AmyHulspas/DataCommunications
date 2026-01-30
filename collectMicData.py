@@ -4,7 +4,7 @@ import soundfile as sf
 import matplotlib.pyplot as plt
 
 #Config
-PORT = 'COM10'
+PORT = 'COM4'
 BAUDRATE = 1000000
 SAMPLINGRATE = 24000 #24kHz
 DURATION = 5 #In seconds
@@ -33,7 +33,7 @@ array24Bit = (array32Bit >> 8).astype(np.int32) #Extract top 24 bits (MSB-aligne
 scaledAudio = array24Bit / float(2**23)
 
 #Save as 24-bit .wav file
-sf.write('audio/capture.wav', scaledAudio, SAMPLINGRATE, subtype='PCM_24')
+sf.write('audio/capturetest.wav', scaledAudio, SAMPLINGRATE, subtype='PCM_24')
 print("Saved capture.wav")
 
 plt.plot(scaledAudio[:1000])

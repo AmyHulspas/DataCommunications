@@ -2,7 +2,7 @@
 #include <math.h>
 
 #define I2S_PORT I2S_NUM_0
-#define SAMPLE_RATE_HZ 24000.0f
+#define SAMPLE_RATE_HZ 24000
 
 #define MIN_FREQUENCY_HZ 50.0f
 #define MAX_FREQUENCY_HZ 350.0f
@@ -10,9 +10,9 @@
 #define FILTER_HALF_LENGTH 25
 #define FILTER_LENGTH (2 * FILTER_HALF_LENGTH + 1)
 
-#define I2S_BCK_PIN 32
-#define I2S_WS_PIN  25
-#define I2S_DATA_IN_PIN 33
+#define I2S_BCK_PIN 1 //SCK
+#define I2S_WS_PIN  0 //WS
+#define I2S_DATA_IN_PIN 2 //SD
 
 #define INT32_AUDIO_SCALE (-(float)INT32_MIN)
 
@@ -111,7 +111,7 @@ void loop() {
     int32_t samples[BLOCK_SIZE];
     size_t bytesRead = 0;
 
-    i2s_read(I2S_PORT, samples, sizeof(samples), &bytesRead, portMAX_DELAY);a
+    i2s_read(I2S_PORT, samples, sizeof(samples), &bytesRead, portMAX_DELAY);
 
     int count = bytesRead / sizeof(int32_t);
 
